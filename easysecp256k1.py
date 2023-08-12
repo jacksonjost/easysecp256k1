@@ -63,17 +63,13 @@ class EllipticCurve:
 
 
     def multiply(self, P, k):
-        if k == 0 or P is None:
-            return None
         R = None
-        Q = P
-        for i in range(k.bit_length(), -1, -1):
+        for i in range(k.bit_length()):
+            if R is None:
+                R = P
             if (k >> i) & 1:
-                if R is None:
-                    R = Q
-                else:
-                    R = self.add(R, Q)
-            Q = self.add(Q, Q)
+                R = self.add(R, P)
+            P = self.add(P, P)
         return R
 
 # Iterate through all possible points

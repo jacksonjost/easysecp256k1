@@ -17,6 +17,7 @@ This project implements an elliptic curve field that closely resembles the secp2
 #### Additional Functions
 - `plot_curve(curve)`: Plots the given elliptic curve using Matplotlib, showing all possible points on the curve.
 - `is_prime(n)`: Checks the primality of a given number `n`.
+- `modular_sqrt(a, p)`: Calculates the modular square root of a given number a modulo a prime p using Euler's Criterion and the Tonelli–Shanks Algorithm.
 
 #### Generating a Generator
 We iterate through all possible points on the curve to find a generator with the maximum order. The generator and the private key are used to compute the corresponding public key. The script ensures that the private key is within the bounds of the subgroup order.
@@ -35,3 +36,5 @@ This code can be a helpful starting point for anyone interested in working with 
 - Matplotlib for plotting.
 
 **WARNING**: This project is not suitable for, or designed for, cryptographic use.
+
+**Comment**: The project opted against using Schoof's algorithm for calculating the order of an elliptic curve due to its reliance on algebraic geometry, division polynomials, and Frobenius endomorphisms. Instead, we opted for a straightforward iterative method that, while more accessible and clear for our purposes, lacks the computational efficiency and scalability essential for large prime fields. The method presented should be suitable for visualization and understanding but is not appropriate for cryptographic/production use.

@@ -33,3 +33,5 @@ This code can be a helpful starting point for anyone interested in working with 
 
 ### Dependencies
 - Matplotlib for plotting.
+
+**WARNING**: This project is not sutible for, or designed for, cryptographic use.

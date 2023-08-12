@@ -5,7 +5,7 @@
 
 Interactive Example: *Coming Soon*
 
-This project implements an elliptic curve field that closely resembles the secp256k1 curve, known for its use in Bitcoin. It includes essential functionalities to operate over elliptic curve groups, such as point addition and multiplication, and offers visualization of the curve/field using Matplotlib.
+This project implements an elliptic curve field that closely resembles the secp256k1 Koblitz curve, known for its use in Bitcoin. It includes essential functionalities to operate over elliptic curve groups, such as point addition and multiplication, and offers visualization of the curve/field using Matplotlib.
 
 #### Class Definition: `EllipticCurve`
 `EllipticCurve` encapsulates the curve parameters and provides methods for operations over the curve.

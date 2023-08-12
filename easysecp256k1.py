@@ -1,11 +1,6 @@
 # smaller number example of secp256k1-type curve | Jackson Jost
 import matplotlib.pyplot as plt
 
-def modular_sqrt(a, p):
-    if pow(a, (p - 1) // 2, p) != 1:
-        return None
-    return pow(a, (p + 1) // 4, p)
-
 def plot_curve(curve):
     x_values = []
     y_values = []
@@ -53,27 +48,32 @@ class EllipticCurve:
             if denom == 0:
                 return None
             inverse_denom = pow(denom, -1, self.p)
-            lamb = (3 * x_p**2 + self.a) * inverse_denom % self.p
+            lamb = (3 * x_p**2 + self.a) * inverse_denom
         else:
             denom = (x_q - x_p) % self.p
             if denom == 0:
                 return None
             inverse_denom = pow(denom, -1, self.p)
-            lamb = (y_q - y_p) * inverse_denom % self.p
+            lamb = (y_q - y_p) * inverse_denom
 
         x_r = (lamb**2 - x_p - x_q) % self.p
         y_r = (lamb * (x_p - x_r) - y_p) % self.p
 
         return x_r, y_r
 
+
     def multiply(self, P, k):
+        if k == 0 or P is None:
+            return None
         R = None
-        for i in range(k.bit_length()):
-            if R is None:
-                R = P
+        Q = P
+        for i in range(k.bit_length(), -1, -1):
             if (k >> i) & 1:
-                R = self.add(R, P)
-            P = self.add(P, P)
+                if R is None:
+                    R = Q
+                else:
+                    R = self.add(R, Q)
+            Q = self.add(Q, Q)
         return R
 
 # Iterate through all possible points
@@ -87,19 +87,19 @@ b = 7
 curve = EllipticCurve(a, b, p)
 
 for x in range(p):
-    y_sq = (x**3 + b) % p
-    y = modular_sqrt(y_sq, p)
-    if y is not None:
-        for y_val in {y, p-y}:
-            point = (x, y_val)
-            order = 1
-            current_point = point
-            while curve.add(current_point, point) is not None:
-                current_point = curve.add(current_point, point)
-                order += 1
-            if order > max_order:
-                max_order = order
-                generator = point
+    for y_sq in [(x**3 + b) % p]:
+        y = pow(y_sq, (p+1)//4, p)
+        if (y*y - y_sq) % p == 0:
+            for y_val in {y, p-y}:
+                point = (x, y_val)
+                order = 1
+                current_point = point
+                while curve.add(current_point, point) is not None:
+                    current_point = curve.add(current_point, point)
+                    order += 1
+                if order > max_order:
+                    max_order = order
+                    generator = point
 
 G = generator  # Set the generator after finding it
 print(f"The generator is {generator} with order {max_order}.")

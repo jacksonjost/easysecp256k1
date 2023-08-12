@@ -1,6 +1,6 @@
 ### Easy Secp256k1-type Curve Example
 
-![output](https://github.com/Stargl0w/easysecp256k1/assets/76890597/9eb0117e-0b4d-43e8-9917-f3e52535c422)
+![output](https://github.com/Stargl0w/easysecp256k1/assets/76890597/a35cd944-95d0-4620-ad96-59f455f42635)
 
 
 This project implements an elliptic curve field that closely resembles the secp256k1 curve, known for its use in Bitcoin. It includes essential functionalities to operate over elliptic curve groups, such as point addition and multiplication, and offers visualization of the curve/field using Matplotlib.

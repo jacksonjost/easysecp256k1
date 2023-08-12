@@ -1,4 +1,4 @@
-### Easy Secp256k1-type Curve Example
+### Secp256k1-type Curve Example
 
 ![output](https://github.com/Stargl0w/easysecp256k1/assets/76890597/a35cd944-95d0-4620-ad96-59f455f42635)
 

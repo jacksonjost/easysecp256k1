@@ -21,7 +21,7 @@ This project implements an elliptic curve field that closely resembles the secp2
 - `p`: A prime number that defines the finite field.
 - `private_key`: Represents the private key in ECC.
 
-#### Generating a Generator
+## Generating a Generator
 We iterate through all possible points on the curve to find a generator with the maximum order. The generator and the private key are used to compute the corresponding public key.
 - `get_curve_points()`: Retrieves all points on the elliptic curve.
 - `order_of_point(point, curve_points)`: Determines the order of a given point on the curve.

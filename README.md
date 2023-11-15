@@ -8,9 +8,9 @@ Interactive Example: *Coming Soon*
 This project implements an elliptic curve field that closely resembles the secp256k1 Koblitz curve, known for its use in Bitcoin. It includes essential functionalities to operate over elliptic curve groups, such as point addition and multiplication, and offers visualization of the curve/field using Matplotlib.
 
 ## Core Functions
-- `is_on_curve(x, y)`: Checks if a given point `(x, y)` lies on the elliptic curve.
+- `is_on_curve(x, y)`: Checks if a given point `(x, y)` lies on the curve.
 - `modinv(a, m)`: Computes the modular multiplicative inverse of `a` modulo `m`.
-- `double(point)`: Applies the point doubling operation in elliptic curve cryptography.
+- `double(point)`: Applies the point doubling operation.
 - `add(point1, point2)`: Adds two points on the elliptic curve using the chord-and-tangent rule.
 - `plot_curve()`: Visualizes the elliptic curve, marking all valid points.
 - `is_prime(n)`: Ensures the validity of the finite field by verifying the primality of `n`.
@@ -18,12 +18,12 @@ This project implements an elliptic curve field that closely resembles the secp2
 
 #### Generating a Generator
 We iterate through all possible points on the curve to find a generator with the maximum order. The generator and the private key are used to compute the corresponding public key.
-- `get_curve_points()`: Retrieves all points on the elliptic curve.
+- `get_curve_points()`: Retrieves all points on the curve.
 - `order_of_point(point, curve_points)`: Determines the order of a given point on the curve.
 - `calculate_generator()`: Finds a generator point with maximal order for the curve.
 
 ## Curve Parameters
-- `a`, `b`: Define the shape of the elliptic curve.
+- `a`, `b`: Define the shape of the curve.
 - `p`: A prime number that defines the finite field.
 - `private_key`: Represents the private key in ECC.
 

@@ -16,16 +16,16 @@ This project implements an elliptic curve field that closely resembles the secp2
 - `is_prime(n)`: Ensures the validity of the finite field by verifying the primality of `n`.
 - `multiply(k, point=g)`: Performs scalar multiplication of a point `k` times.
 
-## Curve Parameters
-- `a`, `b`: Define the shape of the elliptic curve.
-- `p`: A prime number that defines the finite field.
-- `private_key`: Represents the private key in ECC.
-
 ## Generating a Generator
 We iterate through all possible points on the curve to find a generator with the maximum order. The generator and the private key are used to compute the corresponding public key.
 - `get_curve_points()`: Retrieves all points on the elliptic curve.
 - `order_of_point(point, curve_points)`: Determines the order of a given point on the curve.
 - `calculate_generator()`: Finds a generator point with maximal order for the curve.
+
+## Curve Parameters
+- `a`, `b`: Define the shape of the elliptic curve.
+- `p`: A prime number that defines the finite field.
+- `private_key`: Represents the private key in ECC.
 
 #### Constants
 - `p`: A suitable prime number defining the finite field.

@@ -1,6 +1,6 @@
 ### Secp256k1-type Curve Example
 
-![output](https://github.com/Stargl0w/easysecp256k1/assets/76890597/0e1d4dcd-fb7c-4bca-9e59-d62751174681)
+![output](https://github.com/jacksonjost/easysecp256k1/blob/692d08804f237d7cfa9d2c9bc1d4e9202b7e1333/output2.png)
 
 
 Interactive Example: *Coming Soon*

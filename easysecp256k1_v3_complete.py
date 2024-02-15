@@ -114,9 +114,8 @@ def multiply(k, point=g):
 
 k = int(private_key)
 print(f"Private Key is {k}")
-print(f"The generated point is {point['x'], point['y']}")
-
 point = multiply(k, g)
+print(f"The generated point is {point['x'], point['y']}")
 
 plot_curve()
 

@@ -3,7 +3,7 @@
 ![output](https://github.com/jacksonjost/easysecp256k1/blob/692d08804f237d7cfa9d2c9bc1d4e9202b7e1333/output2.png)
 
 
-Interactive Example: *Coming Soon*
+Interactive Application: [Download Available](https://github.com/jacksonjost/easysecp256k1/releases/tag/Windows)
 
 This project implements an elliptic curve field that closely resembles the secp256k1 Koblitz curve, known for its use in Bitcoin. It includes essential functionalities to operate over elliptic curve groups, such as point addition and multiplication, and offers visualization of the curve/field using Matplotlib.
 

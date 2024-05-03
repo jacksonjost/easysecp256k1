@@ -1,6 +1,6 @@
 ### Secp256k1-type Curve Example
 
-![output](https://github.com/jacksonjost/easysecp256k1/blob/692d08804f237d7cfa9d2c9bc1d4e9202b7e1333/output2.PNG)
+![output]([https://github.com/jacksonjost/easysecp256k1/blob/692d08804f237d7cfa9d2c9bc1d4e9202b7e1333/output2.PNG](https://raw.githubusercontent.com/jacksonjost/easysecp256k1/main/output2.PNG))
 
 
 Interactive Application: [Download Available](https://github.com/jacksonjost/easysecp256k1/releases/tag/Windows)
